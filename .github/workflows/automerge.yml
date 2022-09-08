@@ -6,7 +6,7 @@ on:
     branches:
       - main
   pull_request:
-    branches: ['webui/**']
+    branches: ['*']
 
   # Try enabling auto-merge for a pull request when a draft is marked as “ready for review”, when
   # a required label is applied or when a “do not merge” label is removed, or when a pull request
@@ -29,6 +29,6 @@ jobs:
       - uses: reitermarkus/automerge@v2.1.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          merge-method: rebase
+          merge-method: merge
           do-not-merge-labels: no-merge
           pull-request: ${{ github.event.inputs.pull-request }}
