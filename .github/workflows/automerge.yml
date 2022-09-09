@@ -2,7 +2,7 @@ name: automerge
 
 on:
   # Try enabling auto-merge for all open pull requests on branches starting with 'webui/' prefix
-  push:
+  pull_request:
     branches:
       - '**'
 
