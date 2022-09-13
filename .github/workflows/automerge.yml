@@ -6,8 +6,7 @@ on:
     branches:
       - '**'
   pull_request:
-    branches:
-      - '**'
+    types: [opened, reopened]
 
   # Try enabling auto-merge for a pull request when a draft is marked as “ready for review”, when
   # a required label is applied or when a “do not merge” label is removed, or when a pull request
@@ -31,4 +30,3 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           merge-method: merge
-          do-not-merge-labels: no-merge
