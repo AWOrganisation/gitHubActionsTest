@@ -1,18 +1,13 @@
 name: automerge
 
 on:
-#  workflow_run:
-#    workflows: [ 'Verify MetaTag json files' ]
-#    branches:
-#      - 'webui/**'
   # Try enabling auto-merge for all open pull requests on branches starting with 'webui/' prefix
   push:
     branches:
       - 'webui/**'
 
-  # Try enabling auto-merge for a pull request when a draft is marked as “ready for review”, when
-  # a required label is applied or when a “do not merge” label is removed, or when a pull request
-  # is updated in any way (opened, synchronized, reopened, edited).
+  # Try enabling auto-merge for a pull request when branch starts with "webui/", when
+  # a pull request is updated in any way (opened, synchronized, reopened, edited).
   pull_request_target:
     branches:
       - 'webui/**'
@@ -29,19 +24,8 @@ jobs:
   automerge:
     name: Auto-Merge Pull Request
     runs-on: ubuntu-latest
-#    steps:
-#      - id: automerge
-#        name: automerge
-#        uses: "pascalgn/automerge-action@v0.15.3"
-#        env:
-#          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
     steps:
       - uses: reitermarkus/automerge@v2.1.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           merge-method: merge
-#    steps:
-#      - uses: AWOrganisation/automerge-aw-test@v1.0.3
-#        with:
-#          token: ${{ secrets.GITHUB_TOKEN }}
-#          merge-method: merge
