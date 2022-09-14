@@ -23,19 +23,19 @@ jobs:
   automerge:
     name: Auto-Merge Pull Request
     runs-on: ubuntu-latest
-#    steps:
-#      - id: automerge
-#        name: automerge
-#        uses: "pascalgn/automerge-action@v0.15.3"
-#        env:
-#          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+    steps:
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.15.3"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 #    steps:
 #      - uses: reitermarkus/automerge@v2.1.2
 #        with:
 #          token: ${{ secrets.GITHUB_TOKEN }}
 #          merge-method: merge
-    steps:
-      - uses: AWOrganisation/automerge@v1.0.3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          merge-method: merge
+#    steps:
+#      - uses: AWOrganisation/automerge@v1.0.3
+#        with:
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          merge-method: merge
