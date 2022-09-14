@@ -3,8 +3,6 @@ name: automerge
 on:
   workflow_run:
     workflows: [ 'Verify MetaTag json files' ]
-    types:
-      - completed
     branches:
       - 'webui/**'
   # Try enabling auto-merge for all open pull requests on branches starting with 'webui/' prefix
