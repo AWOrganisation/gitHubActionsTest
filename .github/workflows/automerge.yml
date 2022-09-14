@@ -10,6 +10,8 @@ on:
   # a required label is applied or when a “do not merge” label is removed, or when a pull request
   # is updated in any way (opened, synchronized, reopened, edited).
   pull_request_target:
+    branches:
+      - 'webui/**'
     types:
       - opened
       - synchronize
