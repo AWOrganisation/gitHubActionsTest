@@ -29,3 +29,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           merge-method: merge
+          do-not-merge-labels: no-merge
+          pull-request: ${{ github.event.inputs.pull-request }}
