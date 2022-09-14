@@ -35,7 +35,7 @@ jobs:
 #          token: ${{ secrets.GITHUB_TOKEN }}
 #          merge-method: merge
     steps:
-      - uses: AWOrganisation/automerge@v1.0.1
+      - uses: AWOrganisation/automerge
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           merge-method: merge
