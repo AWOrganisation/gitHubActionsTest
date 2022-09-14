@@ -2,7 +2,7 @@ name: automerge
 
 on:
   workflow_run:
-    workflows: [ 'validate' ]
+    workflows: [ 'Verify MetaTag json files' ]
     types:
       - completed
     branches:
