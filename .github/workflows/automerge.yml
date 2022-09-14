@@ -13,7 +13,7 @@ on:
       - 'webui/**'
     types:
       - opened
-      - synchronize
+      - synchronized
       - reopened
       - edited
       - labeled
