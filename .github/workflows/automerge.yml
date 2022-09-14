@@ -1,25 +1,31 @@
 name: automerge
 
 on:
-  # Try enabling auto-merge for all open pull requests on branches starting with 'webui/' prefix
-  push:
+  workflow_run:
+    workflows: [ 'validate' ]
+    types:
+      - completed
     branches:
       - 'webui/**'
+  # Try enabling auto-merge for all open pull requests on branches starting with 'webui/' prefix
+#  push:
+#    branches:
+#      - 'webui/**'
 
   # Try enabling auto-merge for a pull request when a draft is marked as “ready for review”, when
   # a required label is applied or when a “do not merge” label is removed, or when a pull request
   # is updated in any way (opened, synchronized, reopened, edited).
-  pull_request_target:
-    branches:
-      - 'webui/**'
-    types:
-      - opened
-      - synchronize
-      - reopened
-      - edited
-      - labeled
-      - unlabeled
-      - ready_for_review
+#  pull_request_target:
+#    branches:
+#      - 'webui/**'
+#    types:
+#      - opened
+#      - synchronize
+#      - reopened
+#      - edited
+#      - labeled
+#      - unlabeled
+#      - ready_for_review
 
 jobs:
   automerge:
@@ -32,9 +38,6 @@ jobs:
 #        env:
 #          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
     steps:
-      - name: Sleep for 10 seconds
-        run: sleep 10s
-        shell: bash
       - uses: reitermarkus/automerge@v2.1.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
