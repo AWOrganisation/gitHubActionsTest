@@ -1,29 +1,29 @@
 name: automerge
 
 on:
-  workflow_run:
-    workflows: [ 'Verify MetaTag json files' ]
-    branches:
-      - 'webui/**'
-  # Try enabling auto-merge for all open pull requests on branches starting with 'webui/' prefix
-#  push:
+#  workflow_run:
+#    workflows: [ 'Verify MetaTag json files' ]
 #    branches:
 #      - 'webui/**'
+  # Try enabling auto-merge for all open pull requests on branches starting with 'webui/' prefix
+  push:
+    branches:
+      - 'webui/**'
 
   # Try enabling auto-merge for a pull request when a draft is marked as “ready for review”, when
   # a required label is applied or when a “do not merge” label is removed, or when a pull request
   # is updated in any way (opened, synchronized, reopened, edited).
-#  pull_request_target:
-#    branches:
-#      - 'webui/**'
-#    types:
-#      - opened
-#      - synchronize
-#      - reopened
-#      - edited
-#      - labeled
-#      - unlabeled
-#      - ready_for_review
+  pull_request_target:
+    branches:
+      - 'webui/**'
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - edited
+      - labeled
+      - unlabeled
+      - ready_for_review
 
 jobs:
   automerge:
