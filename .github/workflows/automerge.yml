@@ -29,13 +29,13 @@ jobs:
 #        uses: "pascalgn/automerge-action@v0.15.3"
 #        env:
 #          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-#    steps:
-#      - uses: reitermarkus/automerge@v2.1.2
-#        with:
-#          token: ${{ secrets.GITHUB_TOKEN }}
-#          merge-method: merge
     steps:
-      - uses: AWOrganisation/automerge-aw-test@v1.0.3
+      - uses: reitermarkus/automerge@v2.1.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           merge-method: merge
+#    steps:
+#      - uses: AWOrganisation/automerge-aw-test@v1.0.3
+#        with:
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          merge-method: merge

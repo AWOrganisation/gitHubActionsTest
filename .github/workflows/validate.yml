@@ -1,0 +1,23 @@
+name: validate
+
+on:
+  # Try enabling auto-merge for all open pull requests on branches starting with 'webui/' prefix
+  push:
+    branches:
+      - '**'
+
+jobs:
+  verify-jsons:
+    name: Verify MetaTag json files
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout source code
+        uses: actions/checkout@v3
+      - name: use node.js 14
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - name: install dependencies
+        run: npm ci
+      - name: validate metatag config files
+        run: npm run validate
